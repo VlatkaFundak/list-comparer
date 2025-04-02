@@ -1,0 +1,39 @@
+{
+  "name": "compare-files-extension-os-fidro",
+  "displayName": "Compare Files Extension",
+  "description": "A VS Code extension to compare text files and show differences and commons.",
+  "version": "0.0.1",
+  "publisher": "your-publisher-name",
+  "engines": {
+      "vscode": "^1.60.0"
+  },
+  "categories": [
+      "Other"
+  ],
+  "activationEvents": [
+      "onCommand:extension.compareFiles"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+      "commands": [
+          {
+              "command": "extension.compareFiles",
+              "title": "Compare Files"
+          }
+      ]
+  },
+  "scripts": {
+      "vscode:prepublish": "npm run compile",
+      "compile": "tsc -p ./",
+      "watch": "tsc -watch -p ./",
+      "pretest": "npm run compile && npm run lint",
+      "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+      "@types/node": "^14.14.37",
+      "@types/vscode": "^1.60.0",
+      "eslint": "^7.22.0",
+      "typescript": "^4.2.3",
+      "vscode-test": "^1.4.0"
+  }
+}
